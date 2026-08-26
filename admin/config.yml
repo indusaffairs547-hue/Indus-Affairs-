@@ -1,1 +1,24 @@
+backend:
+  name: git-gateway
+  branch: main
 
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+collections:
+  - name: "articles"
+    label: "Articles & Briefings"
+    folder: "articles"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { 
+          label: "Category Desk", 
+          name: "category", 
+          widget: "select", 
+          options: ["Politics", "Diplomacy", "Security", "Economics", "Climate Change", "Technology", "Opinion"] 
+        }
+      - { label: "Excerpt Summary", name: "description", widget: "text" }
+      - { label: "Body Article", name: "body", widget: "markdown" }

@@ -1,7 +1,7 @@
 ---
 title: Why the Politics of New Provinces in Pakistan Always Centers on Sindh?
-date: 2026-08-26T16:10:00.000+05:00
-image: https://share.google/vIIjpsaaXdT3B3AWw
+date: 2026-08-26T16:49:00.000+05:00
+image: /images/uploads/screenshot_20260826-164804.png
 category: Politics
 description: "The debate surrounding the creation of new administrative
   provinces in Pakistan has once again surged to the forefront of national

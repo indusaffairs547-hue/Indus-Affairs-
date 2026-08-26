@@ -12,13 +12,13 @@
       scroll-behavior: smooth;
     }
     body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: #f8fafc;
-  color: #0f172a;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
     header {
       text-align: center;
@@ -59,12 +59,12 @@
       white-space: nowrap;
     }
     main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px 16px;
-  flex: 1;
-  width: 100%;
-  box-sizing: border-box;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 16px;
+      flex: 1;
+      width: 100%;
+      box-sizing: border-box;
     }
     #single-article-view {
       display: none;
@@ -89,20 +89,9 @@
       cursor: pointer;
     }
     .desk {
-  margin-top: 30px;
-  scroll-margin-top: 70px;
-  display: none;
-}
-.desk.active,
-.desk:has(.article-card) {
-  display: block;
-}
-    
-  margin-top: 30px;
-  scroll-margin-top: 70px;
-  display: block;
-      }
-
+      margin-top: 30px;
+      scroll-margin-top: 70px;
+      display: none;
     }
     .desk.active {
       display: block;
@@ -152,12 +141,26 @@
       line-height: 1.4;
       margin: 0;
     }
+    .page-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      line-height: 1.6;
+    }
+    .archive-list {
+      background: #ffffff;
+      padding: 24px 32px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      list-style-type: square;
+    }
     footer {
-  background-color: #0f172a;
-  color: #94a3b8;
-  padding: 40px 16px 24px;
-  margin-top: auto;
-  text-align: center;
+      background-color: #0f172a;
+      color: #94a3b8;
+      padding: 40px 16px 24px;
+      margin-top: auto;
+      text-align: center;
     }
     .footer-container {
       display: flex;
@@ -177,6 +180,7 @@
       text-decoration: none;
       font-size: 14px;
       font-weight: 600;
+      cursor: pointer;
     }
     .social-links a {
       color: #f8fafc;
@@ -212,13 +216,13 @@
 
   <nav class="main-nav">
     <a href="#" onclick="showHomepage(); return false;">Latest Feed</a>
-    <a href="#politics">Politics</a>
-    <a href="#diplomacy">Diplomacy</a>
-    <a href="#security">Security</a>
-    <a href="#economics">Economics</a>
-    <a href="#climate">Climate</a>
-    <a href="#technology">Tech</a>
-    <a href="#opinion">Opinion</a>
+    <a href="#" onclick="showDesk('politics'); return false;">Politics</a>
+    <a href="#" onclick="showDesk('diplomacy'); return false;">Diplomacy</a>
+    <a href="#" onclick="showDesk('security'); return false;">Security</a>
+    <a href="#" onclick="showDesk('economics'); return false;">Economics</a>
+    <a href="#" onclick="showDesk('climate'); return false;">Climate</a>
+    <a href="#" onclick="showDesk('technology'); return false;">Tech</a>
+    <a href="#" onclick="showDesk('opinion'); return false;">Opinion</a>
   </nav>
 
   <main>
@@ -264,14 +268,42 @@
       <h2>Opinion Desk</h2>
       <div id="articles-opinion" class="articles-grid"></div>
     </section>
-      </main>
-        <footer>
+
+    <section id="about" class="desk">
+      <h2>About Indus Affairs</h2>
+      <div class="page-content">
+        <p><strong>Indus Affairs</strong> is an independent analytical platform dedicated to in-depth research on global geopolitics, maritime strategic corridors, regional security dynamics, and international relations.</p>
+        <p>Our objective is to deliver objective statecraft analysis and geopolitical intelligence across South Asia, the Middle East, and global power centers.</p>
+      </div>
+    </section>
+
+    <section id="gallery" class="desk">
+      <h2>Image Gallery</h2>
+      <div id="gallery-grid" class="articles-grid"></div>
+    </section>
+
+    <section id="archive" class="desk">
+      <h2>Article Archive (الأرشيف)</h2>
+      <ul id="archive-list" class="archive-list"></ul>
+    </section>
+
+    <section id="legal" class="desk">
+      <h2>Legal & Terms of Use</h2>
+      <div class="page-content">
+        <h3>Ownership & Copyright</h3>
+        <p>All analytical text, editorial content, and original assets published on <strong>Indus Affairs</strong> are the intellectual property of Indus Affairs unless stated otherwise. Unauthorized duplication without attribution is strictly prohibited.</p>
+        <h3>Privacy Policy</h3>
+        <p>Indus Affairs respects visitor privacy. We do not track, collect, or monetize personal identifiable information. Standard web host server logs are strictly used for bandwidth and security diagnostics.</p>
+      </div>
+    </section>
+  </main>
+  <footer>
     <div class="footer-container">
       <div class="footer-links">
-        <a href="#about">About</a>
-        <a href="#gallery">Image Gallery</a>
-        <a href="#archive">Archive (الرشيف)</a>
-        <a href="#legal">Legal & Terms</a>
+        <a href="#" onclick="showDesk('about'); return false;">About</a>
+        <a href="#" onclick="showDesk('gallery'); return false;">Image Gallery</a>
+        <a href="#" onclick="showDesk('archive'); return false;">Archive (الأرشيف)</a>
+        <a href="#" onclick="showDesk('legal'); return false;">Legal & Terms</a>
       </div>
 
       <div class="social-links">
@@ -282,10 +314,12 @@
       </div>
     </div>
     <p class="copyright">&copy; 2026 Indus Affairs. All rights reserved.</p>
-        </footer>
-          <script>
+  </footer>
+
+  <script>
     const repoUser = "indusaffairs547-hue";
     const repoName = "Indus-Affairs-";
+    let articlesData = [];
 
     function parseFrontmatter(text) {
       const metadata = {};
@@ -329,14 +363,29 @@
 
     function showHomepage() {
       document.getElementById('single-article-view').style.display = 'none';
+      document.querySelectorAll('.desk').forEach(desk => desk.classList.remove('active'));
+      
       document.querySelectorAll('.desk').forEach(desk => {
-        if (desk.querySelector('.articles-grid').children.length > 0) {
+        const grid = desk.querySelector('.articles-grid');
+        if (grid && grid.children.length > 0 && desk.id !== 'gallery') {
           desk.classList.add('active');
         }
       });
       window.scrollTo(0,0);
     }
-              async function openArticle(fileName) {
+
+    function showDesk(deskId) {
+      document.getElementById('single-article-view').style.display = 'none';
+      document.querySelectorAll('.desk').forEach(desk => desk.classList.remove('active'));
+      
+      const targetDesk = document.getElementById(deskId);
+      if (targetDesk) {
+        targetDesk.classList.add('active');
+      }
+      window.scrollTo(0,0);
+    }
+
+    async function openArticle(fileName) {
       try {
         const rawRes = await fetch(`https://raw.githubusercontent.com/${repoUser}/${repoName}/main/articles/${fileName}`);
         if (!rawRes.ok) return;
@@ -359,11 +408,40 @@
       }
     }
 
+    function populateFooterData() {
+      const galleryGrid = document.getElementById('gallery-grid');
+      const archiveList = document.getElementById('archive-list');
+
+      if (galleryGrid) galleryGrid.innerHTML = '';
+      if (archiveList) archiveList.innerHTML = '';
+
+      articlesData.forEach(article => {
+        if (article.image && galleryGrid) {
+          galleryGrid.innerHTML += `
+            <a class="article-card" href="javascript:void(0)" onclick="openArticle('${article.fileName}')">
+              <img src="${article.image}" alt="${article.title}">
+              <div class="article-card-body">
+                <h3>${article.title}</h3>
+              </div>
+            </a>`;
+        }
+
+        if (archiveList) {
+          archiveList.innerHTML += `
+            <li style="margin-bottom: 10px;">
+              <strong>${article.date || 'Published'}</strong> — 
+              <a href="javascript:void(0)" onclick="openArticle('${article.fileName}')" style="color:#0284c7; text-decoration:none; font-weight:600;">${article.title}</a>
+            </li>`;
+        }
+      });
+    }
+
     async function loadAllArticlesToHomepage() {
       try {
         const listRes = await fetch(`https://api.github.com/repos/${repoUser}/${repoName}/contents/articles`);
         if (!listRes.ok) return;
         const files = await listRes.json();
+        articlesData = [];
 
         for (const file of files) {
           if (file.name.endsWith('.md')) {
@@ -377,6 +455,9 @@
             const description = meta.description || '';
             const image = meta.image || '';
             const category = meta.category || 'Politics';
+            const date = meta.date || '';
+
+            articlesData.push({ title, description, image, category, date, fileName: file.name });
 
             const containerId = getDeskContainerId(category);
             const targetContainer = document.getElementById(containerId);
@@ -396,6 +477,9 @@
             }
           }
         }
+
+        populateFooterData();
+
       } catch (err) {
         console.log("Error loading articles on homepage:", err);
       }

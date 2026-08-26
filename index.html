@@ -60,25 +60,37 @@
       margin: 0 auto;
       padding: 20px 16px;
     }
-    .featured-desk {
+    
+    #single-article-view {
+      display: none;
       background: #ffffff;
-      border: 1px solid #e2e8f0;
+      padding: 30px;
       border-radius: 8px;
-      padding: 24px;
+      border: 1px solid #e2e8f0;
       margin-bottom: 30px;
     }
-    .featured-desk .tag {
-      background-color: #0284c7;
-      color: #ffffff;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 8px;
-      border-radius: 4px;
-      text-transform: uppercase;
+    #single-article-view img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 16px 0;
     }
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: #0284c7;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
     .desk {
       margin-top: 30px;
       scroll-margin-top: 70px;
+      display: none;
+    }
+    .desk.active {
+      display: block;
     }
     .desk h2 {
       font-size: 20px;
@@ -97,6 +109,14 @@
       border-radius: 8px;
       overflow: hidden;
       background: #ffffff;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .article-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
     .article-card img {
       width: 100%;
@@ -124,39 +144,9 @@
       margin-top: 60px;
       text-align: center;
     }
-    .footer-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-    .footer-links, .social-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 16px;
-    }
-    .footer-links a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 500;
-    }
-    .social-links a {
-      color: #e2e8f0;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 4px 10px;
-      border: 1px solid #334155;
-      border-radius: 4px;
-    }
     .copyright {
       font-size: 12px;
       color: #64748b;
-      border-top: 1px solid #1e293b;
-      padding-top: 16px;
       margin: 0;
     }
   </style>
@@ -171,131 +161,73 @@
   </header>
 
   <nav class="main-nav">
+    <a href="#" onclick="showHomepage(); return false;">Latest Feed</a>
     <a href="#politics">Politics</a>
     <a href="#diplomacy">Diplomacy</a>
     <a href="#security">Security</a>
     <a href="#economics">Economics</a>
-    <a href="#climate">Climate Change</a>
-    <a href="#technology">Technology</a>
+    <a href="#climate">Climate</a>
+    <a href="#technology">Tech</a>
     <a href="#opinion">Opinion</a>
   </nav>
+
   <main>
-    <section class="featured-desk">
-      <span class="tag">Featured Briefing</span>
-      <h2>Multipolarity and the Future of State Alignments</h2>
-      <p class="lead">An independent perspective on statecraft strategies required to maintain equilibrium amidst heightening regional friction.</p>
-    </section>
-
-    <section id="politics" class="desk">
-      <h2>Politics Desk</h2>
-      <div id="articles-politics" class="articles-grid"></div>
-    </section>
-
-    <section id="diplomacy" class="desk">
-      <h2>Diplomacy Desk</h2>
-      <div id="articles-diplomacy" class="articles-grid"></div>
-    </section>
-
-    <section id="security" class="desk">
-      <h2>Security Desk</h2>
-      <div id="articles-security" class="articles-grid"></div>
-    </section>
-
-    <section id="economics" class="desk">
-      <h2>Economics Desk</h2>
-      <div id="articles-economics" class="articles-grid"></div>
-    </section>
-
-    <section id="climate" class="desk">
-      <h2>Climate Change Desk</h2>
-      <div id="articles-climatechange" class="articles-grid"></div>
-    </section>
-
-    <section id="technology" class="desk">
-      <h2>Technology Desk</h2>
-      <div id="articles-technology" class="articles-grid"></div>
-    </section>
-
-    <section id="opinion" class="desk">
-      <h2>Opinion Desk</h2>
-      <div id="articles-opinion" class="articles-grid"></div>
-    </section>
-  </main>
-  <main>
-    <section class="featured-desk">
-      <span class="tag">Featured Briefing</span>
-      <h2>Multipolarity and the Future of State Alignments</h2>
-      <p class="lead">An independent perspective on statecraft strategies required to maintain equilibrium amidst heightening regional friction.</p>
-    </section>
-
-    <section id="politics" class="desk">
-      <h2>Politics Desk</h2>
-      <div id="articles-politics" class="articles-grid"></div>
-    </section>
-
-    <section id="diplomacy" class="desk">
-      <h2>Diplomacy Desk</h2>
-      <div id="articles-diplomacy" class="articles-grid"></div>
-    </section>
-
-    <section id="security" class="desk">
-      <h2>Security Desk</h2>
-      <div id="articles-security" class="articles-grid"></div>
-    </section>
-
-    <section id="economics" class="desk">
-      <h2>Economics Desk</h2>
-      <div id="articles-economics" class="articles-grid"></div>
-    </section>
-
-    <section id="climate" class="desk">
-      <h2>Climate Change Desk</h2>
-      <div id="articles-climatechange" class="articles-grid"></div>
-    </section>
-
-    <section id="technology" class="desk">
-      <h2>Technology Desk</h2>
-      <div id="articles-technology" class="articles-grid"></div>
-    </section>
-
-    <section id="opinion" class="desk">
-      <h2>Opinion Desk</h2>
-      <div id="articles-opinion" class="articles-grid"></div>
-    </section>
-  </main>
-  <footer>
-    <div class="footer-container">
-      <div class="footer-links">
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#archive">Archive</a>
-        <a href="#legal">Legal</a>
-      </div>
-
-      <div class="social-links">
-        <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
-        <a href="https://x.com" target="_blank" rel="noopener">X (Twitter)</a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
+    <div id="single-article-view">
+      <span class="back-btn" onclick="showHomepage()">&larr; Back to Briefings</span>
+      <h1 id="article-title"></h1>
+      <p id="article-meta" style="color: #64748b; font-size: 13px;"></p>
+      <div id="article-image-container"></div>
+      <div id="article-body" style="line-height: 1.7; font-size: 16px; margin-top: 20px;"></div>
     </div>
+
+    <section id="politics" class="desk">
+      <h2>Politics Desk</h2>
+      <div id="articles-politics" class="articles-grid"></div>
+    </section>
+
+    <section id="diplomacy" class="desk">
+      <h2>Diplomacy Desk</h2>
+      <div id="articles-diplomacy" class="articles-grid"></div>
+    </section>
+
+    <section id="security" class="desk">
+      <h2>Security Desk</h2>
+      <div id="articles-security" class="articles-grid"></div>
+    </section>
+
+    <section id="economics" class="desk">
+      <h2>Economics Desk</h2>
+      <div id="articles-economics" class="articles-grid"></div>
+    </section>
+
+    <section id="climate" class="desk">
+      <h2>Climate Change Desk</h2>
+      <div id="articles-climatechange" class="articles-grid"></div>
+    </section>
+
+    <section id="technology" class="desk">
+      <h2>Technology Desk</h2>
+      <div id="articles-technology" class="articles-grid"></div>
+    </section>
+
+    <section id="opinion" class="desk">
+      <h2>Opinion Desk</h2>
+      <div id="articles-opinion" class="articles-grid"></div>
+    </section>
+  </main>
+
+  <footer>
     <p class="copyright">&copy; 2026 Indus Affairs. All rights reserved.</p>
   </footer>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
+    <script>
+    const repoUser = "indusaffairs547-hue";
+    const repoName = "Indus-Affairs-";
 
     function parseFrontmatter(text) {
       const metadata = {};
       const lines = text.split('\n');
       let inFrontmatter = false;
+      let bodyLines = [];
 
       for (let line of lines) {
         if (line.trim() === '---') {
@@ -310,8 +242,11 @@
             val = val.replace(/^["'](.*)["']$/, '$1');
             metadata[key] = val;
           }
+        } else {
+          bodyLines.push(line);
         }
       }
+      metadata.bodyContent = bodyLines.join('\n').trim();
       return metadata;
     }
 
@@ -328,10 +263,39 @@
       return 'articles-politics';
     }
 
+    function showHomepage() {
+      document.getElementById('single-article-view').style.display = 'none';
+      document.querySelectorAll('.desk').forEach(desk => {
+        if (desk.querySelector('.articles-grid').children.length > 0) {
+          desk.classList.add('active');
+        }
+      });
+      window.scrollTo(0,0);
+    }
+          async function openArticle(fileName) {
+      try {
+        const rawRes = await fetch(`https://raw.githubusercontent.com/${repoUser}/${repoName}/main/articles/${fileName}`);
+        if (!rawRes.ok) return;
+        const rawText = await rawRes.text();
+        const meta = parseFrontmatter(rawText);
+
+        document.getElementById('article-title').innerText = meta.title || "Untitled Briefing";
+        document.getElementById('article-meta').innerText = `Category: ${meta.category || 'General'} | Date: ${meta.date || ''}`;
+        
+        const imgBox = document.getElementById('article-image-container');
+        imgBox.innerHTML = meta.image ? `<img src="${meta.image}" alt="Article Image">` : '';
+
+        document.getElementById('article-body').innerText = meta.bodyContent || meta.description || "";
+
+        document.querySelectorAll('.desk').forEach(desk => desk.classList.remove('active'));
+        document.getElementById('single-article-view').style.display = 'block';
+        window.scrollTo(0,0);
+      } catch(e) {
+        console.error("Failed to load article details:", e);
+      }
+    }
+
     async function loadAllArticlesToHomepage() {
-      const repoUser = "indusaffairs547-hue";
-      const repoName = "Indus-Affairs-";
-      
       try {
         const listRes = await fetch(`https://api.github.com/repos/${repoUser}/${repoName}/contents/articles`);
         if (!listRes.ok) return;
@@ -355,15 +319,16 @@
 
             if (targetContainer) {
               const cardHtml = `
-                <article class="article-card">
+                <a class="article-card" href="javascript:void(0)" onclick="openArticle('${file.name}')">
                   ${image ? `<img src="${image}" alt="${title}">` : ''}
                   <div class="article-card-body">
                     <h3>${title}</h3>
                     <p>${description}</p>
                   </div>
-                </article>
+                </a>
               `;
               targetContainer.insertAdjacentHTML('beforeend', cardHtml);
+              targetContainer.closest('.desk').classList.add('active');
             }
           }
         }

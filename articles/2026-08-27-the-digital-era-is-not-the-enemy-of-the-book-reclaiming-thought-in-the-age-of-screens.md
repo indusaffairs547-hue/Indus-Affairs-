@@ -1,7 +1,6 @@
 ---
-title: "The Digital Era is Not the Enemy of the Book: Reclaiming Thought in the
-  Age of Screens"
-date: 2026-08-27T07:52:00.000+05:00
+title: The Digital Era is Not the Enemy of the Book.
+date: 2026-08-27T07:59:00.000+05:00
 image: /images/uploads/1787798885300.png
 category: Technology
 description: "Scientific and technological advancements have fundamentally

@@ -1,7 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: indusaffairs547-hue/Indus-Affairs-
   branch: main
-
+  base_url: https://suki.vercel.app
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 collections:
